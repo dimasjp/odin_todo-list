@@ -1,1 +1,1 @@
-(()=>{"use strict";const t=[];((e,o,n)=>{const c={title:"Task-1",date:"22",priority:void 0};t.push(c),console.log(t)})();const e=document.querySelector("#content"),o=document.createElement("h1");o.textContent="DOM Test",e.appendChild(o)})();
+(()=>{"use strict";const t=[];(e=>{const o={name:"Project-1"};t.push(o),console.log(t)})();const e=[];((t,o,n)=>{const c={title:"Task-1",date:"22",priority:void 0};e.push(c),console.log(e)})();const o=document.querySelector("#content"),n=document.createElement("h1");n.textContent="DOM Test",o.appendChild(n)})();
