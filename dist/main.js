@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector("#content"),t=document.createElement("h1");t.textContent="DOM Test",e.appendChild(t)})();
