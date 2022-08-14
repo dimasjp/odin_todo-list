@@ -1,1 +1,1 @@
-(()=>{const e=document.querySelector("#content"),t=document.createElement("h1");t.textContent="DOM Test",e.appendChild(t)})();
+(()=>{"use strict";const t=[];((e,o,n)=>{const c={title:"Task-1",date:"22",priority:void 0};t.push(c),console.log(t)})();const e=document.querySelector("#content"),o=document.createElement("h1");o.textContent="DOM Test",e.appendChild(o)})();

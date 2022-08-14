@@ -1,3 +1,5 @@
+import { taskFactory, tasksArray, createTask } from './tasks.js';
+
 const content = document.querySelector('#content');
 
 const header = document.createElement('h1');
