@@ -1,5 +1,6 @@
 import { projectFactory, projectsArray, createProject } from './projects.js';
 import { taskFactory, tasksArray, createTask } from './tasks.js';
+import './style.css';
 
 const content = document.querySelector('#content');
 
