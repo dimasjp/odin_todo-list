@@ -1,12 +1,12 @@
 
 const projectsArray = [];
 
-const projectFactory = (name) => {
-    return { name };
+const projectFactory = (title) => {
+    return { title };
 }
 
-const createProject = (name) => {
-    const newProject = projectFactory(name);
+const createProject = (title) => {
+    const newProject = projectFactory(title);
     projectsArray.push(newProject);
     console.log(projectsArray);
 }
