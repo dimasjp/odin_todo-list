@@ -1,6 +1,5 @@
-import { projectFactory, projectsArray, createProject } from './projects.js';
-import { taskFactory, tasksArray, createTask } from './tasks.js';
-import { renderPage } from './display.js';
+import { createTask } from './tasks.js';
+import { renderPage, renderTask } from './display.js';
 import './style.css';
 
 
