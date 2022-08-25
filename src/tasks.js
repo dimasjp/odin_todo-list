@@ -25,6 +25,7 @@ const createTask = (title, date, priority) => {
 
 const renderTask = () => {
     const taskSection = document.querySelector('.task-section');
+    taskSection.innerHTML = '';
 
     for (let i = 0; i < tasksArray.length; i++) {
         const taskCard = document.createElement('div');

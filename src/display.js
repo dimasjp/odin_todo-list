@@ -1,10 +1,9 @@
-import { createModal } from "./modal";
-import { renderTask, tasksArray } from "./tasks";
+import { openModal, closeModal } from "./modal";
+import { renderTask, createTask } from "./tasks";
 
 const content = document.querySelector('#content');
 
 const renderPage = () => {
-
 
     const header = document.createElement('div');
     header.textContent = "DOM";
@@ -22,6 +21,14 @@ const renderPage = () => {
     taskSection.classList.add('task-section');
     main.appendChild(taskSection);
 
+    const asdf = document.createElement('button');
+    asdf.textContent = "Hey";
+    projectSection.appendChild(asdf);
+
+    asdf.addEventListener('click', () => {
+        openModal();
+    })
+
     // const modalButton = document.createElement('button');
     // modalButton.textContent = "Open Modal";
     // modalButton.addEventListener('click', () => {
@@ -29,7 +36,6 @@ const renderPage = () => {
     //     header.textContent = "A";
     // });
     // content.appendChild(modalButton);
-    renderTask();
 }
 
 
