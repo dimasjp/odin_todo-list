@@ -5,8 +5,7 @@ import { createForm } from "./form";
 const content = document.querySelector('#content');
 const form = document.querySelector('#modal-form');
 
-const renderPage = () => {
-
+const createMain = () => {
     const header = document.createElement('div');
     header.textContent = "DOM";
     content.appendChild(header);
@@ -14,7 +13,9 @@ const renderPage = () => {
     const main = document.createElement('div');
     main.setAttribute('id', 'main');
     content.appendChild(main);
+}
 
+const createProjectSection = () => {
     const projectSection = document.createElement('div');
     projectSection.classList.add('project-section');
     main.appendChild(projectSection);
@@ -27,6 +28,19 @@ const renderPage = () => {
     projectContainer.classList.add('project-container');
     projectSection.appendChild(projectContainer);
 
+    const openProjectModal = document.createElement('button');
+    openProjectModal.classList.add('open-project-modal');
+    openProjectModal.textContent = "Project";
+    projectControl.appendChild(openProjectModal);
+
+    openProjectModal.addEventListener('click', () => {
+        openModal();
+        form.classList.add('project-form');
+        createForm();
+    })
+}
+
+const createTaskSection = () => {
     const taskSection = document.createElement('div')
     taskSection.classList.add('task-section');
     main.appendChild(taskSection);
@@ -39,17 +53,6 @@ const renderPage = () => {
     taskContainer.classList.add('task-container');
     taskSection.appendChild(taskContainer);
 
-    const openProjectModal = document.createElement('button');
-    openProjectModal.classList.add('open-project-modal');
-    openProjectModal.textContent = "Project";
-    projectControl.appendChild(openProjectModal);
-
-    openProjectModal.addEventListener('click', () => {
-        openModal();
-        form.classList.add('project-form');
-        createForm();
-    })
-
     const openTaskModal = document.createElement('button');
     openTaskModal.classList.add('open-task-modal');
     openTaskModal.textContent = "Task";
@@ -60,9 +63,14 @@ const renderPage = () => {
         form.classList.add('task-form');
         createForm();
     })
-    renderTask();
 }
 
+const renderPage = () => {
+    createMain();
+    createProjectSection();
+    createTaskSection();
+    renderTask();
+}
 
 export {
     renderPage,
