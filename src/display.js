@@ -1,5 +1,5 @@
 import { openModal, closeModal } from "./modal";
-import { renderTask, createTask } from "./tasks";
+import { renderTask, createTask, tasksArray } from "./tasks";
 import { createForm } from "./form";
 
 const content = document.querySelector('#content');
@@ -63,13 +63,14 @@ const createTaskSection = () => {
         form.classList.add('task-form');
         createForm();
     })
+
+    renderTask();
 }
 
 const renderPage = () => {
     createMain();
     createProjectSection();
     createTaskSection();
-    renderTask();
 }
 
 export {

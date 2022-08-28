@@ -1,3 +1,5 @@
+import { createTask, tasksArray } from "./tasks";
+import { closeModal } from "./modal";
 
 const modalContainer = document.querySelector('.modal-content');
 const formField = document.querySelector('#modal-form');
@@ -36,11 +38,7 @@ const createTaskForm = () => {
     prioInput.setAttribute('id', 'prio-input');
     prioInput.setAttribute('name', 'prio-input');
 
-    const submitButton = document.createElement('button');
-    submitButton.classList.add('btn-submit');
-    submitButton.textContent = "Submit";
-
-    formField.append(formTitle, titleInput, dateInput, prioInput, submitButton);
+    formField.append(formTitle, titleInput, dateInput, prioInput);
 }
 
 const createProjectForm = () => {
@@ -56,12 +54,8 @@ const createProjectForm = () => {
     titleInput.setAttribute('type', 'text');
     titleInput.setAttribute('id', 'title-input');
     titleInput.setAttribute('name', 'title-input');
-
-    const submitButton = document.createElement('button');
-    submitButton.classList.add('btn-submit');
-    submitButton.textContent = "Submit";
     
-    formField.append(formTitle, titleInput, submitButton);
+    formField.append(formTitle, titleInput);
 }
 
 export { createForm, createTaskForm, createProjectForm }

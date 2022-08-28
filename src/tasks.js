@@ -1,4 +1,4 @@
-
+import { closeModal } from "./modal";
 
 const tasksArray = [
     {
@@ -47,6 +47,7 @@ const renderTask = () => {
         taskCardLeft.appendChild(taskCardTitle);
     }
 }
+
 
 export {
     taskFactory,
