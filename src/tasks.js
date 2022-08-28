@@ -24,14 +24,14 @@ const createTask = (title, date, priority) => {
 }
 
 const renderTask = () => {
-    const taskSection = document.querySelector('.task-section');
-    taskSection.innerHTML = '';
+    const taskContainer = document.querySelector('.task-container');
+    taskContainer.innerHTML = '';
 
     for (let i = 0; i < tasksArray.length; i++) {
         const taskCard = document.createElement('div');
         taskCard.classList.add('task-card');
         taskCard.setAttribute('data-index', i);
-        taskSection.appendChild(taskCard);
+        taskContainer.appendChild(taskCard);
 
         const taskCardLeft = document.createElement('div');
         taskCardLeft.classList.add('task-card-left');
@@ -41,7 +41,7 @@ const renderTask = () => {
         taskCardRight.classList.add('task-card-right');
         taskCard.appendChild(taskCardRight);
 
-        const taskCardTitle = document.createElement('h3');
+        const taskCardTitle = document.createElement('h2');
         taskCardTitle.classList.add('task-title');
         taskCardTitle.textContent = tasksArray[i].title;
         taskCardLeft.appendChild(taskCardTitle);

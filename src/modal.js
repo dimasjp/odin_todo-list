@@ -1,8 +1,10 @@
+import { createForm, createTaskForm, createProjectForm } from "./form.js";
+
 
 // Task input modal
 const modal = document.querySelector('.modal');
 const closeButton = document.querySelector('.btn-close-modal');
-
+const form = document.querySelector('#modal-form');
 
 
 const openModal = () => {
@@ -16,6 +18,8 @@ document.addEventListener('click', (event) => {
 })
 
 const closeModal = () => {
+    form.classList.remove('task-form');
+    form.classList.remove('project-form');
     modal.classList.add('display-none');
 }
 

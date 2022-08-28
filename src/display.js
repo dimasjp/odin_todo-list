@@ -1,7 +1,9 @@
 import { openModal, closeModal } from "./modal";
 import { renderTask, createTask } from "./tasks";
+import { createForm } from "./form";
 
 const content = document.querySelector('#content');
+const form = document.querySelector('#modal-form');
 
 const renderPage = () => {
 
@@ -17,27 +19,49 @@ const renderPage = () => {
     projectSection.classList.add('project-section');
     main.appendChild(projectSection);
 
+    const projectControl = document.createElement('div');
+    projectControl.classList.add('project-control');
+    projectSection.appendChild(projectControl);
+
+    const projectContainer = document.createElement('div');
+    projectContainer.classList.add('project-container');
+    projectSection.appendChild(projectContainer);
+
     const taskSection = document.createElement('div')
     taskSection.classList.add('task-section');
     main.appendChild(taskSection);
 
-    const asdf = document.createElement('button');
-    asdf.textContent = "Hey";
-    projectSection.appendChild(asdf);
+    const taskControl = document.createElement('div');
+    taskControl.classList.add('task-control');
+    taskSection.appendChild(taskControl);
 
-    asdf.addEventListener('click', () => {
+    const taskContainer = document.createElement('div');
+    taskContainer.classList.add('task-container');
+    taskSection.appendChild(taskContainer);
+
+    const openProjectModal = document.createElement('button');
+    openProjectModal.classList.add('open-project-modal');
+    openProjectModal.textContent = "Project";
+    projectControl.appendChild(openProjectModal);
+
+    openProjectModal.addEventListener('click', () => {
         openModal();
+        form.classList.add('project-form');
+        createForm();
     })
 
-    // const modalButton = document.createElement('button');
-    // modalButton.textContent = "Open Modal";
-    // modalButton.addEventListener('click', () => {
-    //     createModal();
-    //     header.textContent = "A";
-    // });
-    // content.appendChild(modalButton);
-}
+    const openTaskModal = document.createElement('button');
+    openTaskModal.classList.add('open-task-modal');
+    openTaskModal.textContent = "Task";
+    taskControl.appendChild(openTaskModal);
 
+    openTaskModal.addEventListener('click', () => {
+        openModal();
+        form.classList.add('task-form');
+        createForm();
+    })
+    renderTask();
+}
 
 
 export {

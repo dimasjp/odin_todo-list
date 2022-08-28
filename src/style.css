@@ -1,4 +1,8 @@
 
+:root {
+    --slate-500: #64748B;
+}
+
 body {
     height: 100vh;
     margin: 0;
@@ -40,11 +44,37 @@ body {
 }
 
 .modal-content {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     margin: 15% auto;
-    width: 300px;
+    height: fit-content;
+    width: fit-content;
     border-radius: 5px;
+    border: 1px solid red;
+    background-color: white;
 }
+
+#modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#modal-form input {
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid var(--slate-500);
+}
+
+.btn-close-modal {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+}
+
 
 .display-none {
     display: none;
