@@ -12,12 +12,16 @@ const tasksArray = [
     },
 ];
 
-const taskFactory = (title, date, priority) => {
-    return { title, date, priority };
+class Task {
+    constructor(title, date, priority) {
+        this.title = title;
+        this.date = date;
+        this.priority = priority;
+    }
 }
 
 const createTask = (title, date, priority) => {
-    const newTask = taskFactory(title, date, priority);
+    const newTask = new Task(title, date, priority);
     tasksArray.push(newTask);
     console.log(tasksArray);
     renderTask();
@@ -41,16 +45,26 @@ const renderTask = () => {
         taskCardRight.classList.add('task-card-right');
         taskCard.appendChild(taskCardRight);
 
-        const taskCardTitle = document.createElement('h2');
+        const taskCardTitle = document.createElement('p');
         taskCardTitle.classList.add('task-title');
         taskCardTitle.textContent = tasksArray[i].title;
         taskCardLeft.appendChild(taskCardTitle);
+
+        const taskCardEdit = document.createElement('button');
+        taskCardEdit.classList.add('task-edit');
+        taskCardEdit.textContent = "Edit";
+        taskCardRight.appendChild(taskCardEdit);
+
+        const taskCardDelete = document.createElement('button');
+        taskCardDelete.classList.add('task-delete-btn');
+        taskCardDelete.textContent = "Delete";
+        taskCardRight.appendChild(taskCardDelete);
     }
 }
 
 
 export {
-    taskFactory,
+    Task,
     tasksArray,
     createTask,
     renderTask

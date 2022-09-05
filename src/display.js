@@ -1,4 +1,5 @@
 import { openModal, closeModal } from "./modal";
+import { Project, renderProject } from "./projects";
 import { renderTask, createTask, tasksArray } from "./tasks";
 import { createForm } from "./form";
 
@@ -38,6 +39,8 @@ const createProjectSection = () => {
         form.classList.add('project-form');
         createForm();
     })
+
+    renderProject();
 }
 
 const createTaskSection = () => {
