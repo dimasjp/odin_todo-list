@@ -27,8 +27,14 @@ body {
     grid-template-columns: 1fr 4fr;
 }
 
-.project-section {
+.nav {
     border: 1px solid blue;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .task-section {

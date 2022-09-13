@@ -14,16 +14,38 @@ const createMain = () => {
     content.appendChild(main);
 }
 
+const createNav = () => {
+    const nav = document.createElement('nav');
+    nav.classList.add('nav');
+    main.appendChild(nav);
+
+    const homeMenu = document.createElement('ul');
+    homeMenu.classList.add('home-menu');
+    nav.appendChild(homeMenu);
+
+    const inboxTab = document.createElement('li');
+    inboxTab.classList.add('inbox-tab');
+    inboxTab.textContent = "Inbox";
+
+    const upcomingTab = document.createElement('li');
+    upcomingTab.classList.add('upcoming-tab');
+    upcomingTab.textContent = "Upcoming";
+
+    homeMenu.append(inboxTab, upcomingTab);
+}
+
 const createProjectSection = () => {
+    const nav = document.querySelector('.nav');
+
     const projectSection = document.createElement('div');
     projectSection.classList.add('project-section');
-    main.appendChild(projectSection);
+    nav.appendChild(projectSection);
 
     const projectControl = document.createElement('div');
     projectControl.classList.add('project-control');
     projectSection.appendChild(projectControl);
 
-    const projectContainer = document.createElement('div');
+    const projectContainer = document.createElement('ul');
     projectContainer.classList.add('project-container');
     projectSection.appendChild(projectContainer);
 
@@ -70,6 +92,7 @@ const createTaskSection = () => {
 
 const renderPage = () => {
     createMain();
+    createNav();
     createProjectSection();
     createTaskSection();
 }
