@@ -1,7 +1,6 @@
-import { openModal, closeModal } from "./modal";
+import { openModal, closeModal, createForm, } from "./modal";
 import { Project, renderProject } from "./projects";
 import { renderTask, createTask, tasksArray } from "./tasks";
-import { createForm } from "./form";
 
 const content = document.querySelector('#content');
 const form = document.querySelector('#modal-form');
