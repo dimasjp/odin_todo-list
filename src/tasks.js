@@ -1,6 +1,6 @@
-import { closeModal } from "./modal";
+import { renderTask } from "./display";
 
-const tasksArray = [
+let tasksArray = [
     {
         title: 'TaskTest-22',
     },
@@ -27,45 +27,8 @@ const createTask = (title, date, priority) => {
     renderTask();
 }
 
-const renderTask = () => {
-    const taskContainer = document.querySelector('.task-container');
-    taskContainer.innerHTML = '';
-
-    for (let i = 0; i < tasksArray.length; i++) {
-        const taskCard = document.createElement('div');
-        taskCard.classList.add('task-card');
-        taskCard.setAttribute('data-index', i);
-        taskContainer.appendChild(taskCard);
-
-        const taskCardLeft = document.createElement('div');
-        taskCardLeft.classList.add('task-card-left');
-        taskCard.appendChild(taskCardLeft);
-
-        const taskCardRight = document.createElement('div');
-        taskCardRight.classList.add('task-card-right');
-        taskCard.appendChild(taskCardRight);
-
-        const taskCardTitle = document.createElement('p');
-        taskCardTitle.classList.add('task-title');
-        taskCardTitle.textContent = tasksArray[i].title;
-        taskCardLeft.appendChild(taskCardTitle);
-
-        const taskCardEdit = document.createElement('button');
-        taskCardEdit.classList.add('task-edit');
-        taskCardEdit.textContent = "Edit";
-        taskCardRight.appendChild(taskCardEdit);
-
-        const taskCardDelete = document.createElement('button');
-        taskCardDelete.classList.add('task-delete-btn');
-        taskCardDelete.textContent = "Delete";
-        taskCardRight.appendChild(taskCardDelete);
-    }
-}
-
-
 export {
     Task,
     tasksArray,
-    createTask,
-    renderTask
+    createTask
 }
